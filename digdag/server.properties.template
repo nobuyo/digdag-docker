@@ -1,0 +1,10 @@
+# server
+server.bind = 0.0.0.0
+server.port = 65432
+
+# database
+database.type = postgresql
+database.host = $POSTGRES_HOST
+database.database = $POSTGRES_DB
+database.user = $POSTGRES_USER
+database.password = $POSTGRES_PASSWORD

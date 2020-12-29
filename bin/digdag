@@ -1,0 +1,2 @@
+envsubst < digdag/server.properties.template > digdag/server.properties
+java -jar /usr/local/bin/digdag server -c digdag/server.properties
