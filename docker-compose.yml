@@ -15,7 +15,8 @@ services:
       POSTGRES_PASSWORD: digdag
     volumes:
       - .:/src
-    command: /bin/bash bin/digdag
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: /bin/sh bin/digdag
   postgres:
     image: postgres:13.1-alpine
     ports:

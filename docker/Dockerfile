@@ -1,5 +1,8 @@
-FROM szyn/docker-digdag:latest
+FROM openjdk:8u212-jre-alpine
 
-RUN apk add --no-cache gettext
+ENV DIGDAG_VERSION 0.9.42
+WORKDIR /src
 
-ENTRYPOINT []
+RUN apk add --no-cache curl gettext docker && \
+  curl -o /usr/local/bin/digdag --create-dirs -L "https://dl.digdag.io/digdag-${DIGDAG_VERSION}" && \
+  chmod +x /usr/local/bin/digdag
